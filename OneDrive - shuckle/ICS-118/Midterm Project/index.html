@@ -1,22 +1,28 @@
 <!DOCTYPE HTML>
+<!-- 	Dylan Barkowsky - C0509422
+		ICS-118 Midterm
+		Last revision: 2021-10-25 -->
 <html lang="en">
 	<head>
 		<title>Hollow Knight Fan Page</title>
 		<meta charset="utf-8">
         <meta name="author" content="Dylan Barkowsky">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="images/favicon.ico" >
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel&family=Oswald:wght@200&display=swap" rel="stylesheet"> 
 		<link type="text/css" rel="stylesheet" href="./css/style.css">
 	</head>
 	<body>
-
+		<!-- Section for background video -->
 		<section class="video">
 			<video autoplay muted loop>
 				<source src="./images/Hollow Knight 2021.10.20 - 09.13.34.04.DVR.mp4" type="video/mp4">
 			</video>
 		</section>
 
+		<!-- Header, containing title and nav elements -->
 		<header>
 			<div class="container">
 				<div class="title">
@@ -29,44 +35,63 @@
 						<a href="#top">HOME</a>
 						<a href="#facts">CHARACTERS</a>
 						<a href="#info">INFO</a>
-						<a href="#signup">SIGN UP</a>
+						<a href="#signup">SUBSCRIBE</a>
 					</div>
 				</div>
 			</div>
 		</header>
 		
-		<section class="viewport" id="top"></section>
+		<!-- Section for clear area that allows viewing of background video -->
+		<section class="viewport" id="top">
+			<div class="container">
+				<h1>HOLLOW KNIGHT FAN PAGE</h1>
+			</div>
+		</section>
 
+		<!-- Section for 3 facts -->
 		<section class="facts" id="facts">
 			<div class="container">
+				<!-- Each fact-box contains 1 picture, 1 heading, and 1 paragraph -->
 				<div class="fact-box">
 					<img src="./images/knight.png" alt="">
 					<h3>The Knight</h3>
-					<p>Here is some text. It is good text, full of meaning and value. There will surely be no reason to replace it with something else.</p>
+					<p>
+						The game's protagonist. He utilizes his quick speed and resourcefulness to overcome his larger opponents. His nail is sharp and piercing to all except the most armoured of foes. Within him burns a desire to pursue the Hallownest's cause of infection, yet he knows nothing about himself, not even from whence he came.
+					</p>
 				</div>
 				<div class="fact-box">
 					<img src="./images/hornet.png" alt="">
 					<h3>Hornet</h3>
-					<p>Here is some text. It is good text, full of meaning and value. There will surely be no reason to replace it with something else.</p>
+					<p>
+						Both antagonist and eventual friend of The Knight, Hornet frequently blocks his progress. She believes he is not worthy of breaking the seals and facing the challenges within. In order to pass, he will have to defeat her in combat. Her sewing needle allows her to attack at range with ease.
+					</p>
 				</div>
-				<div class="fact-box">
+				<div class="fact-box" id="final-fact">
 					<img src="./images/zote.png" alt="">
 					<h3>Zote</h3>
-					<p>Here is some text. It is good text, full of meaning and value. There will surely be no reason to replace it with something else.</p>
+					<p>
+						Encountered early in The Knight's journey, Zote sees himself as the ultimate knight: courageous, powerful, a hero. While his bravery may be unmatched, so is his foolishness. He will require rescuing at every turn, often falling prey to larger insects, entangling himself in traps, and generally getting in over his head.
+					</p>
 				</div>
 			</div>
 		</section>
 
+		<!-- Section for general information -->
 		<section class="info" id="info">
 			<div class="container">
 				<div id="info-blurb">
-					info
+					<h2>What is Hollow Knight?</h2>
+					<p>
+						Hollow Knight is a 2D game in the Metroidvania genre. You take control of a small insect known only as The Knight. The world of Hollow Knight, called Hallownest, and its inhabitants are succumbing to a strange infection stemming from the Black Egg, a sealed tomb of an ancient champion. It's your job to traverse the expansive world to break the seal and banish the infection, meeting new friends and collecting powerups along the way.
+					</p>
 				</div>
 			</div>
 		</section>
 
+		<!-- Section for subscribing -->
 		<section class="signup" id="signup">
 			<div class="container">
+				<!-- signup-box holds both the video and form divs, which overlap -->
 				<div class="signup-box">
 					<div class="signup-video">
 						<video autoplay muted loop>
@@ -75,11 +100,11 @@
 					</div>
 					<div class="signup-form">
 						<h2>Want to learn more?</h2>
-						<p>Sign up for regular Hollow Knight facts!</p>
-						<form>
-							<input type="text" name="name" id="name" placeholder="Full Name">
-							<input type="email" name="email" id="email" placeholder="Email">
-							<button type="submit">Subcribe</button>
+						<p>Subscribe for regular Hollow Knight facts!</p>
+						<form id="subscribe">
+							<input type="text" name="name" id="name" placeholder="Full Name" required>
+							<input type="email" name="email" id="email" placeholder="Email" required>
+							<button type="submit" form="subscribe">Subscribe</button>
 						</form>
 					</div>
 				</div>

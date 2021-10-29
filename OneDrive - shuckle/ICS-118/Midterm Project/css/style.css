@@ -1,4 +1,8 @@
 /* 
+    Dylan Barkowsky - C0509422
+	ICS-118 Midterm
+	Last revision: 2021-10-25
+
     color palette
     off-black: #0f0f1b
     slate: #565a75
@@ -6,14 +10,16 @@
     off-white: #fafbf6
 
     fonts
-    font-family: 'Caveat', cursive; -small headings
+    font-family: 'Caveat', cursive; -h3
     font-family: 'Cinzel', serif; -regular text
-    font-family: 'Oswald', sans-serif;  -main title and nav
+    font-family: 'Oswald', sans-serif;  -header, h1, h2
 */
 
+
+/*general body and container*/
 html, body{
     width: 100%;
-    min-width: 320px;
+    min-width: 375px;
     height: 100%;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif; /*in case fonts fail*/
@@ -31,12 +37,14 @@ html, body{
     height: inherit;
 }
 
+/*header, which includes title and navigation*/
 header{
     width: 100%;
     height: 60px;
     background-color: #0f0f1b;
     color: #fafbf6;
     position: fixed;
+    z-index: 100;
 }
 
 header .container{
@@ -80,7 +88,7 @@ header .container{
 
 .menu a:hover{
     transition: 0.5s;
-    color: #0f0f1b;
+    /* color: #0f0f1b; */
     background-color: #565a75;
 }
 
@@ -103,6 +111,7 @@ label{
     display: none;
 }
 
+/*controls background video*/
 .video{
     align-items: center;
     z-index: -100;
@@ -120,13 +129,30 @@ label{
     bottom: 0;
 }
 
+/*div which allows a gap for video viewing*/
 .viewport{
-    height: 40vh;
+    height: 50vh;
     width: inherit;
+    text-align: center;
+    align-items: center;
+    display: flex;
 }
 
+.viewport h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    position: relative;
+    color: #fafbf6;
+    z-index: 0;
+}
+
+/*section for 3 facts starts here*/
 .facts{
     background-color: #fafbf6;
+}
+
+.facts .container{
+    align-items:baseline;
 }
 
 .fact-box{
@@ -136,20 +162,20 @@ label{
     padding: 30px 20px;
 }
 
-h3{
-    font-family: 'Caveat', cursive;
-}
 
+
+/*section for info starts here*/
 img{
     max-height: 100px;
 }
 
 section.info{
-    height: 400px;
+    height: auto;
     background-image: url("../images/20211020093010_1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     align-items: center;
+    padding: 2em;
 }
 
 #info-blurb{
@@ -159,6 +185,9 @@ section.info{
     border-radius: 10px;
 }
 
+
+
+/* section for subscribe/sign up area starts here */
 .signup{
     height:auto;
     min-height: 400px;
@@ -202,7 +231,7 @@ section.info{
     z-index: 100;
     position: absolute;
     top: 0; 
-    left: 0;
+    left: -10px;
     text-align: center;
     color: #fafbf6;
     padding: 10px;
@@ -215,6 +244,11 @@ input#name{
     width: 60%;
     height: 30px;
     margin: 15px auto;
+    background-color: #0f0f1b;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: #fafbf6;
+    padding-left: 1em;
 }
 
 input#email{
@@ -222,20 +256,41 @@ input#email{
     width: 60%;
     height: 30px;
     margin: 15px auto;
+    background-color: #0f0f1b;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: #fafbf6;
+    padding-left: 1em;
 }
 
 button{
     display: block;
-    width: 61%;
+    width: 30%;
     height: 30px;
     margin: 15px auto;
     background-color: #0f0f1b;
     color: #fafbf6;
     font-style: bold;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
 }
 
+/*general tags*/
 p{
     font-family: 'Cinzel', serif;
+    padding: 0em 2em;
+}
+
+h2{
+    font-family: 'Oswald', sans-serif;
+    margin: 0.5em;
+    font-size: 32px;
+}
+
+h3{
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+    margin: 0.5em;
 }
 
 /*for testing
@@ -243,7 +298,9 @@ div, section{
     border: 0.1px black solid;
 } */
 
+/*mobile settings*/
 @media only screen and (max-width: 720px) {
+    /*header items here*/
     header.container{
         align-items: center;
     }
@@ -270,6 +327,7 @@ div, section{
         text-align: center;
         width: 100%;
         display: none;
+        right: -20em;
     }
 
     .menu a {
@@ -278,7 +336,7 @@ div, section{
         margin: 0;
         padding: 5px;
         line-height: 2em;
-        background-color: #fafbf610;
+        background-color: #0f0f1b75;
     }
 
     #toggle:checked ~ .menu {
@@ -289,9 +347,47 @@ div, section{
         right: -1.9em;
     }
 
+    /*increased video peak div to be a bit larger*/
+    .viewport{
+        height: 70vh;
+    }
+
+    .viewport h1{
+        font-size: 25px;
+    }
+
+    /*facts section here*/
+    div.fact-box{
+        width: 80%;
+        border-bottom: #565a75 1px solid;
+    }
+
+    /*to remove the border on the final fact, so it is only between.*/
+    div#final-fact{
+        border-bottom: none;
+    }
+
+    .facts .container{
+        align-items:center;
+    }
+
+    /*info section here*/
     #info-blurb{
         height: 80%;
-        width: 80%;
+        width: 100%;
+    }
+
+    /*subscribe section here*/
+    section.signup .container{
+        width: 90vw;
+    }
+
+    .signup-form{
+        width: 100%;
+    }
+    
+    .signup-form p{
+        font-size: 12px;
     }
 
 }
