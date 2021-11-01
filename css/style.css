@@ -1,7 +1,7 @@
 /* 
     Dylan Barkowsky - C0509422
 	ICS-118 Midterm
-	Last revision: 2021-10-25
+	Last revision: 2021-11-01
 
     color palette
     off-black: #0f0f1b
@@ -79,7 +79,6 @@ header .container{
 .menu a{
     clear: right;
     text-decoration: none;
-    /* margin: 10px 10px; */
     line-height: 70px;
     font-size: 18px;
     color: #fafbf6;
@@ -88,7 +87,6 @@ header .container{
 
 .menu a:hover{
     transition: 0.5s;
-    /* color: #0f0f1b; */
     background-color: #565a75;
 }
 
@@ -298,17 +296,28 @@ div, section{
     border: 0.1px black solid;
 } */
 
-/*mobile settings*/
-@media only screen and (max-width: 720px) {
-    /*header items here*/
-    header.container{
-        align-items: center;
-    }
-
+/*tablet and narrow screen settings*/
+@media only screen and (max-width: 1000px) {
     .container{
         flex-direction: column;
+        align-items: center;
     }
     
+    /*facts section here*/
+    .fact-box{
+        width: 80%;
+        border-bottom: #565a75 1px solid;
+        margin:0 auto;
+    }
+
+    /*to remove the border on the final fact, so it is only between.*/
+    #final-fact{
+        border-bottom: none;
+    }
+}
+
+/*mobile settings*/
+@media only screen and (max-width: 720px) {    
     label {
         display: block;
         cursor: pointer;
@@ -339,6 +348,7 @@ div, section{
         background-color: #0f0f1b75;
     }
 
+    /* control checkbox for hamburger menu */
     #toggle:checked ~ .menu {
         display: block;
         position: absolute;
@@ -354,21 +364,6 @@ div, section{
 
     .viewport h1{
         font-size: 25px;
-    }
-
-    /*facts section here*/
-    div.fact-box{
-        width: 80%;
-        border-bottom: #565a75 1px solid;
-    }
-
-    /*to remove the border on the final fact, so it is only between.*/
-    div#final-fact{
-        border-bottom: none;
-    }
-
-    .facts .container{
-        align-items:center;
     }
 
     /*info section here*/
